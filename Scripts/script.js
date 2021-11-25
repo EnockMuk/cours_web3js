@@ -10,15 +10,15 @@ const lireWeb3=async()=>{
     
     const monContrat= new web3.eth.Contract(monAbi.abi,address);
 
-    //const record= await monContrat.methods.enregistrer('Enock').send({from:comptes[0]});
+    const record= await monContrat.methods.enregistrer('Enock').send({from:comptes[0]});
 
-    //console.log(record)
+    console.log(record)
 
     console.log(await monContrat.methods.noms(0).call())
 
-    // const event= await monContrat.getPastEvents('MonEvenement', {fromBlock:0, toBlock:'latest'});
-    // const e= event.map((i)=>i.returnValues);
-    // console.log(e)
+     const event= await monContrat.getPastEvents('MonEvenement', {fromBlock:0, toBlock:'latest'});
+     const e= event.map((i)=>i.returnValues);
+     console.log(e)
 
     await monContrat.events.MonEvenement({fromBlock:0,toBlock:'latest'})
     .on('data',event=>console.log(event))
