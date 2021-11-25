@@ -33,11 +33,11 @@ const lireWeb3=async()=>{
  console.log(await web3.utils.sha3('Enock'))
  console.log(await web3.utils.sha3('12'))
 
-// console.log(await web3.utils.keccak256('Mukolos'))
+ console.log(await web3.utils.keccak256('Mukolos'))
 
-// console.log(await web3.utils.soliditySha3('Enock'))
+ console.log(await web3.utils.soliditySha3('Enock'))
 
- // console.log(web3.eth.accounts.create())
+  console.log(web3.eth.accounts.create())
 
 }
 
